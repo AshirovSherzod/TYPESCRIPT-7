@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__links ul {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        button {
+            border: transparent;
+            background-color: transparent;
+            font-size: 20px;
+        }
+    }
+}

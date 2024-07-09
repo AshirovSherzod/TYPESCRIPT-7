@@ -1,0 +1,25 @@
+.footer {
+    padding: 50px 0px;
+    background-color: #272727;
+
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #fff;
+        padding-top: 20px;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}

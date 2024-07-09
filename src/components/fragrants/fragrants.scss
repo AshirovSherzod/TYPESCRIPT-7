@@ -1,0 +1,40 @@
+.fragrants {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 50px 0px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            color: green;
+        }
+
+        button {
+            width: 120px;
+            height: 35px;
+            background-color: #6BBC90;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+    }
+
+    &__right {
+        width: 50%;
+        height: 100%;
+        // background-color: red;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

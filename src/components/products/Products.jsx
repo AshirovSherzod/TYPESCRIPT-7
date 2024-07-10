@@ -1,32 +1,27 @@
-import React from 'react'
-import { PRODUCTS_DATA } from '@/static'
-import Image from 'next/image'
-import img from '../../assets/image-1.png'
+"use client"
+import React, { useEffect, useState } from 'react'
 import './products.scss'
-import Link from 'next/link'
+import ProductsWrapper from './ProductsWrapper'
+import axios from 'axios'
 
 const Products = ({ limit }) => {
+    
+    const [data, setData] = useState(null)
 
-    let product = PRODUCTS_DATA.slice(0, limit).map(el => (
-        <div key={el.id} className="products__card">
-            <Link href={`/details/${el.id}`}>
-                <div className="products__card-img">
-                    <Image width={100} height={100} alt='images' src={img} />
-                </div>
-            </Link>
-            <div className="products__card-title">
-                <h3>{el.title}</h3>
-                <p>{el.price}</p>
-            </div>
-        </div>
-    ))
+    useEffect(() => {
+        axios
+            .get("https://dummyjson.com/products")
+            .then(res => setData(res.data.products))
+            .catch(res => console.log(res))
+    }, [])
+
+
+
     return (
         <section className='products container'>
             <h1>Products</h1>
             <p>Order it for you or for your beloved ones </p>
-            <div className="products__cards ">
-                {product}
-            </div>
+            <ProductsWrapper data={data} />
         </section>
     )
 }

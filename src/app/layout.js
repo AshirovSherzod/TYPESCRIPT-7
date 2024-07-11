@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import StoreProvider from "./StoreProvider";
+import DefaultValues from "@/components/defaultValues/DefaultValues";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,10 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-        </body>
+        <StoreProvider>
+          <DefaultValues />
+          <Header />
+          {children}
+          <Footer />
+        </StoreProvider>
+      </body>
     </html>
   );
 }

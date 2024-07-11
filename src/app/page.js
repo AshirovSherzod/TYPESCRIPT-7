@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
 import Hero from "@/components/hero/Hero";
 import Products from "@/components/products/Products";
 import Fragrants from "@/components/fragrants/Fragrants";

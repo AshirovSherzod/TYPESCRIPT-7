@@ -20,6 +20,7 @@ const Details = () => {
       <div className="details__left">
         <Image width={100} height={100} alt='images' src={data?.images[0]}/>
       </div>
+      
     </main>
   )
 }
